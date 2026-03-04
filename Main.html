@@ -3,364 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asmaa Yousif · data analyst</title>
-  <!-- simple icons (no emojis) – using Font Awesome & google material symbols as fallback -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Asmaa Yousif · Data Analyst</title>
+  
+  <!-- Font Awesome latest -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * {margin:0; padding:0; box-sizing:border-box;}
     body {
-      background: linear-gradient(145deg, #f0f4fa 0%, #d9e2ef 100%);
+      background: linear-gradient(135deg, #e0f0ff, #d0e4ff, #c0d9ff);
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.5;
-      padding: 2rem 1.5rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #1e2b3c;
+      line-height:1.5;
+      color:#1e2b3c;
+      min-height:100vh;
+      padding:2rem 1.5rem;
     }
+    .wrapper {max-width:1280px; margin:auto;}
 
-    .wrapper {
-      max-width: 1280px;
-      width: 100%;
-    }
-
-    /* glass transparent cards */
+    /* Glass Card */
     .glass-card {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.2);
       backdrop-filter: blur(14px) saturate(180%);
       -webkit-backdrop-filter: blur(14px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 2rem;
-      box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.25);
-      padding: 1.75rem;
-      transition: 0.2s ease;
+      border:1px solid rgba(255,255,255,0.4);
+      border-radius:2rem;
+      box-shadow:0 20px 40px -12px rgba(0,20,40,0.25);
+      padding:1.75rem;
+      transition:0.3s ease;
     }
+    .glass-card:hover {transform: translateY(-5px) scale(1.03);}
 
-    .glass-card:hover {
-      background: rgba(255, 255, 255, 0.28);
-      border-color: rgba(255, 255, 255, 0.6);
-      box-shadow: 0 24px 48px -10px rgba(0, 30, 60, 0.3);
-    }
-
-    /* layout grids */
+    /* Profile */
     .profile-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-      align-items: center;
+      display:flex; flex-wrap:wrap; gap:2rem; align-items:center; margin-bottom:2.5rem;
     }
+    .profile-pic {width:150px;height:150px;border-radius:50%;object-fit:cover; background:#bdd3e8;}
+    .profile-info-col {flex:1;}
+    .name-title h1 {font-size:2.8rem;color:#0b1c2e;margin-bottom:0.25rem;}
+    .subhead {font-size:1.3rem;color:#1e3b5a;margin-bottom:0.75rem;display:flex;gap:0.5rem;align-items:center;}
+    .contact-bar {display:flex;flex-wrap:wrap;gap:1.75rem;margin-top:1rem;}
+    .contact-item {display:flex;align-items:center;gap:0.6rem;font-size:1rem;background:rgba(255,255,255,0.2);padding:0.3rem 1rem;border-radius:40px;border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(4px);}
+    .contact-item i {width:1.4rem;text-align:center;color:#1f4973;}
 
-    .profile-pic-col {
-      flex: 0 0 auto;
-    }
+    /* Summary */
+    .summary-card {margin-bottom:2.5rem;}
+    .summary-text {font-size:1.1rem;color:#11212e;max-width:85%;}
 
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255,255,255,0.5);
-      background: #bdd3e8;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+    /* Sections */
+    .section-header {display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;font-weight:450;font-size:1.8rem;color:#0b263b;}
+    .section-header i {font-size:2rem;color:#2a4b74;}
+    .cards-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-bottom:2.5rem;}
 
-    .profile-info-col {
-      flex: 1;
-    }
+    .project-card {display:flex;flex-direction:column;transition:0.3s;}
+    .project-title {display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;font-size:1.4rem;font-weight:500;}
+    .project-title i {font-size:1.6rem;color:#1f4973;}
+    .project-desc {color:#1a2e43;margin-bottom:1.2rem;font-size:0.95rem;flex:1;}
+    .tech-tags {display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.5rem 0 1rem;}
+    .tech-tag {background: rgba(40,70,110,0.15);border-radius:30px;padding:0.2rem 0.9rem;font-size:0.8rem;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(2px);}
+    .btn-link {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;color:#0b2b48;font-weight:500;border-bottom:2px solid transparent;transition:0.2s;margin-top:0.4rem;}
+    .btn-link i {font-size:1rem;}
+    .btn-link:hover {border-bottom-color:#1f4973;}
 
-    .name-title h1 {
-      font-size: 2.8rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: #0b1c2e;
-      margin-bottom: 0.25rem;
-    }
+    /* Skills */
+    .skills-grid {display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;}
+    .skill-chip {background: rgba(240,248,255,0.3);border-radius:40px;padding:0.5rem 1.2rem;font-size:1rem;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.3);}
+    .skill-chip i {color:#1e4b74;}
 
-    .subhead {
-      font-size: 1.3rem;
-      font-weight: 350;
-      color: #1e3b5a;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+    /* Languages */
+    .language-row {display:flex;gap:2.5rem;}
+    .lang-item {display:flex;align-items:center;gap:0.5rem;}
 
-    .contact-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.75rem;
-      margin: 1rem 0 0.5rem;
-    }
+    /* Fade-up animation */
+    .fade-up {opacity:0; transform:translateY(30px); transition: all 0.6s ease-out;}
+    .fade-up.active {opacity:1; transform:translateY(0);}
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1rem;
-      background: rgba(255,255,255,0.2);
-      padding: 0.3rem 1rem 0.3rem 0.8rem;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .contact-item i {
-      font-size: 1.1rem;
-      color: #1f4973;
-      width: 1.4rem;
-      text-align: center;
-    }
-
-    /* summary card */
-    .summary-card {
-      margin-bottom: 2.5rem;
-    }
-
-    .summary-text {
-      font-size: 1.1rem;
-      color: #11212e;
-      max-width: 85%;
-    }
-
-    /* section headers */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      font-weight: 450;
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-      color: #0b263b;
-    }
-
-    .section-header i {
-      font-size: 2rem;
-      color: #2a4b74;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .project-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-title {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 0.8rem;
-      font-size: 1.4rem;
-      font-weight: 500;
-    }
-
-    .project-title i {
-      font-size: 1.6rem;
-      color: #1f4973;
-    }
-
-    .project-desc {
-      color: #1a2e43;
-      margin-bottom: 1.2rem;
-      font-size: 0.95rem;
-      flex: 1;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.5rem 0 1rem;
-    }
-
-    .tech-tag {
-      background: rgba(40, 70, 110, 0.15);
-      border-radius: 30px;
-      padding: 0.2rem 0.9rem;
-      font-size: 0.8rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(2px);
-    }
-
-    .btn-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      color: #0b2b48;
-      font-weight: 500;
-      border-bottom: 2px solid transparent;
-      transition: 0.2s;
-      width: fit-content;
-      margin-top: 0.4rem;
-    }
-
-    .btn-link i {
-      font-size: 1rem;
-    }
-
-    .btn-link:hover {
-      border-bottom-color: #1f4973;
-    }
-
-    /* experience & education list */
-    .list-card {
-      padding: 1.5rem 1.8rem;
-    }
-
-    .list-item {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .list-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .item-year {
-      min-width: 100px;
-      font-weight: 500;
-      color: #1d3e60;
-    }
-
-    .item-content {
-      flex: 1;
-    }
-
-    .item-title {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .item-sub {
-      color: #1e3b58;
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .item-desc {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .item-desc li {
-      display: flex;
-      gap: 0.6rem;
-      margin-bottom: 0.4rem;
-      font-size: 0.95rem;
-    }
-
-    .item-desc li i {
-      color: #2f557b;
-      width: 1.2rem;
-      margin-top: 0.15rem;
-    }
-
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-    }
-
-    .skill-chip {
-      background: rgba(240, 248, 255, 0.3);
-      border-radius: 40px;
-      padding: 0.5rem 1.2rem;
-      font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .skill-chip i {
-      color: #1e4b74;
-    }
-
-    .language-row {
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    .lang-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    hr {
-      border: none;
-      border-top: 2px solid rgba(255,255,255,0.3);
-      margin: 1.2rem 0;
-    }
-
-    .footer-note {
-      margin-top: 3rem;
-      text-align: right;
-      font-size: 0.9rem;
-      color: #2e4b6e;
-    }
-
-    i, .fas, .far, .material-symbols-outlined {
-      font-style: normal;
-    }
-
-    /* adjust placeholder profile */
-    .profile-pic {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2383a9ce"><circle cx="50" cy="50" r="50"/><circle cx="50" cy="40" r="18" fill="%23d4e1f0"/><circle cx="50" cy="100" r="30" fill="%23d4e1f0"/></svg>');
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* responsive */
-    @media (max-width: 650px) {
-      .profile-grid {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .summary-text {
-        max-width: 100%;
-      }
-      .name-title h1 {
-        font-size: 2.2rem;
-      }
+    /* Responsive */
+    @media(max-width:768px){
+      .profile-grid{flex-direction:column;align-items:center;}
+      .skills-grid,.language-row{justify-content:center;}
+      .name-title h1{font-size:2.2rem;}
     }
   </style>
 </head>
 <body>
 <div class="wrapper">
 
-  <!-- profile header with placeholder picture -->
-  <div class="profile-grid">
+  <!-- Profile -->
+  <div class="profile-grid fade-up">
     <div class="profile-pic-col">
-      <div class="profile-pic" role="img" aria-label="profile placeholder"></div>
+      <div class="profile-pic" role="img" aria-label="profile"></div>
     </div>
     <div class="profile-info-col glass-card">
-      <div class="name-title">
-        <h1>Asmaa Yousif Elmetwaly</h1>
-      </div>
-      <div class="subhead">
-        <i class="fas fa-chart-line" style="font-size: 1.3rem;"></i> Data Analyst
-      </div>
+      <div class="name-title"><h1>Asmaa Yousif Elmetwaly</h1></div>
+      <div class="subhead"><i class="fas fa-chart-line"></i> Data Analyst</div>
       <div class="contact-bar">
         <span class="contact-item"><i class="fas fa-phone-alt"></i> 01113240041</span>
         <span class="contact-item"><i class="fas fa-envelope"></i> asmaayousif671@gmail.com</span>
@@ -369,153 +105,70 @@
     </div>
   </div>
 
-  <!-- summary section -->
-  <div class="glass-card summary-card">
-    <div style="display: flex; gap: 1rem; align-items: flex-start;">
-      <i class="fas fa-bullseye" style="font-size: 2rem; color: #1f4973;"></i>
+  <!-- Summary -->
+  <div class="glass-card summary-card fade-up">
+    <div style="display:flex; gap:1rem; align-items:flex-start;">
+      <i class="fas fa-bullseye" style="font-size:2rem;color:#1f4973;"></i>
       <div class="summary-text">
-        Motivated and detail-oriented aspiring Data Analyst with hands-on experience in Excel, Power BI, SQL, and Programming Fundamentals. Skilled in data cleaning, visualization, and extracting insights from datasets. Eager to apply analytical and problem-solving skills to support data-driven decision making in a professional environment.
+        Motivated and detail-oriented aspiring Data Analyst with hands-on experience in Excel, Power BI, SQL, and Python. Skilled in data cleaning, visualization, and extracting insights from datasets. Eager to apply analytical and problem-solving skills to support data-driven decision making.
       </div>
     </div>
   </div>
 
-  <!-- projects section (placeholder + real Sales Dashboard) -->
-  <div class="section-header">
-    <i class="fas fa-folder-open"></i> featured projects
-  </div>
-  <div class="cards-grid">
-    <!-- Sales & Order Dashboard (real project from repo) -->
-    <div class="glass-card project-card">
-      <div class="project-title">
-        <i class="fas fa-table"></i> Sales & Order Analysis
-      </div>
-      <div class="project-desc">
-        End-to-end Excel project: Power Query cleaning, data model, Power Pivot, DAX measures, and interactive dashboard with KPIs, trends & slicers.
-      </div>
+  <!-- Projects -->
+  <div class="section-header fade-up"><i class="fas fa-folder-open"></i> Featured Projects</div>
+  <div class="cards-grid fade-up">
+    <div class="glass-card project-card fade-up">
+      <div class="project-title"><i class="fas fa-table"></i> Sales & Order Analysis</div>
+      <img src="pic/Dash.gif" alt="Sales Dashboard GIF" style="width:100%; border-radius:15px; margin-bottom:0.8rem;">
+      <div class="project-desc">End-to-end Excel project: Power Query cleaning, Power Pivot, DAX measures, and interactive dashboard with KPIs, trends & slicers.</div>
       <div class="tech-tags">
         <span class="tech-tag">Excel</span>
         <span class="tech-tag">Power Query</span>
         <span class="tech-tag">Power Pivot</span>
         <span class="tech-tag">DAX</span>
       </div>
-      <a href="https://github.com/asm-222/Sales-Dashboards/blob/main/README.md" class="btn-link" target="_blank"><i class="fab fa-github"></i> repository →</a>
+      <a href="https://github.com/asm-222/Sales-Dashboards" class="btn-link" target="_blank"><i class="fab fa-github"></i> Repository →</a>
     </div>
 
-    <!-- placeholder: hr analytics -->
-    <div class="glass-card project-card">
-      <div class="project-title">
-        <i class="fas fa-users"></i> HR Analytics Dashboard
-      </div>
-      <div class="project-desc">
-        Interactive Power BI dashboard analyzing employee attrition, satisfaction, and recruitment funnel. Built with DAX and custom visuals.
-      </div>
+    <div class="glass-card project-card fade-up">
+      <div class="project-title"><i class="fas fa-users"></i> HR Analytics Dashboard</div>
+      <div class="project-desc">Interactive Power BI dashboard analyzing employee attrition, satisfaction, and recruitment funnel. Built with DAX and custom visuals.</div>
       <div class="tech-tags">
         <span class="tech-tag">Power BI</span>
         <span class="tech-tag">DAX</span>
         <span class="tech-tag">SQL</span>
       </div>
-      <a href="#" class="btn-link"><i class="fab fa-github"></i> placeholder →</a>
-    </div>
-
-    <!-- placeholder: sql analysis -->
-    <div class="glass-card project-card">
-      <div class="project-title">
-        <i class="fas fa-database"></i> E-commerce SQL Analysis
-      </div>
-      <div class="project-desc">
-        Explored 500k+ rows of transaction data using advanced SQL: window functions, CTEs, customer segmentation, and revenue forecasting.
-      </div>
-      <div class="tech-tags">
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Pandas</span>
-      </div>
-      <a href="#" class="btn-link"><i class="fab fa-github"></i> placeholder →</a>
+      <a href="#" class="btn-link"><i class="fab fa-github"></i> Placeholder →</a>
     </div>
   </div>
 
-  <!-- experience (software engineer line removed as requested) -->
-  <div class="section-header">
-    <i class="fas fa-briefcase"></i> experience
-  </div>
-  <div class="glass-card list-card">
-    <div class="list-item">
-      <div class="item-year">2025 – present</div>
-      <div class="item-content">
-        <div class="item-title">Data Analyst</div>
-        <div class="item-sub"></div>
-        <ul class="item-desc">
-          <li><i class="fas fa-chevron-right"></i> Perform data cleaning and transformation using Power Query.</li>
-          <li><i class="fas fa-chevron-right"></i> Conduct exploratory data analysis (EDA) to identify patterns and insights.</li>
-          <li><i class="fas fa-chevron-right"></i> Create reports and dashboards to support data-driven decisions.</li>
-          <li><i class="fas fa-chevron-right"></i> Collaborate with team members on mini-projects and exercises.</li>
-        </ul>
-      </div>
-    </div>
-    <!-- only one experience block, software engineer removed -->
-  </div>
-
-  <!-- education -->
-  <div class="section-header">
-    <i class="fas fa-graduation-cap"></i> education
-  </div>
-  <div class="glass-card list-card">
-    <div class="list-item">
-      <div class="item-year">2024 – 2028</div>
-      <div class="item-content">
-        <div class="item-title">Bachelor Of Computer Science</div>
-        <div class="item-sub">Faculty of Computer & Information Science, Mansoura University, Mansoura, Egypt</div>
-        <ul class="item-desc" style="margin-top:0.5rem; display:flex; flex-wrap:wrap; gap:0.4rem 1rem;">
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem; vertical-align:middle;"></i> Linear Algebra & Statistics</li>
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem;"></i> Programming & OOP</li>
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem;"></i> Data Structures & Algorithms</li>
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem;"></i> Information Systems (IS)</li>
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem;"></i> Web Development basics</li>
-          <li style="width: calc(50% - 0.5rem);"><i class="fas fa-circle" style="font-size:0.4rem;"></i> Digital Logic & Projects</li>
-        </ul>
-      </div>
+  <!-- Skills -->
+  <div class="glass-card fade-up">
+    <div style="display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;"><i class="fas fa-code"></i><span style="font-size:1.5rem; font-weight:450;">Skills</span></div>
+    <div class="skills-grid">
+      <span class="skill-chip"><i class="fas fa-file-excel"></i> Excel</span>
+      <span class="skill-chip"><i class="fas fa-database"></i> SQL</span>
+      <span class="skill-chip"><i class="fas fa-chart-pie"></i> Power BI</span>
+      <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
     </div>
   </div>
 
-  <!-- skills & languages side by side (using flex) -->
-  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.8rem; margin-top: 1.5rem;">
-    <!-- skills -->
-    <div class="glass-card">
-      <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1.4rem;">
-        <i class="fas fa-code"></i>
-        <span style="font-size: 1.5rem; font-weight: 450;">skills</span>
-      </div>
-      <div class="skills-grid">
-        <span class="skill-chip"><i class="fas fa-file-excel"></i> Excel</span>
-        <span class="skill-chip"><i class="fas fa-database"></i> SQL</span>
-        <span class="skill-chip"><i class="fas fa-chart-pie"></i> Power BI</span>
-        <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
-        <span class="skill-chip"><i class="fas fa-table"></i> Power Pivot</span>
-        <span class="skill-chip"><i class="fas fa-edit"></i> Power Query</span>
-        <span class="skill-chip"><i class="fas fa-calculator"></i> Statistics</span>
-        <span class="skill-chip"><i class="fas fa-git-alt"></i> Git/GitHub</span>
-      </div>
-    </div>
-    <!-- languages -->
-    <div class="glass-card">
-      <div style="display: flex; gap: 0.6rem; align-items: center; margin-bottom: 1.4rem;">
-        <i class="fas fa-globe"></i>
-        <span style="font-size: 1.5rem; font-weight: 450;">languages</span>
-      </div>
-      <div class="language-row">
-        <span class="lang-item"><i class="fas fa-flag"></i> Arabic</span>
-        <span class="lang-item"><i class="fas fa-flag"></i> English</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- footer with github.io note -->
-  <div class="footer-note">
-    <i class="fas fa-crown" style="opacity:0.6;"></i> asm-222.github.io · minimal glass portfolio
-  </div>
-
-  <!-- small spacer to show that software engineer is deleted -->
-  <div style="height:1rem;"></div>
 </div>
+
+<!-- Fade-up JS -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('active');
+      }
+    });
+  }, {threshold: 0.1});
+  elements.forEach(el => observer.observe(el));
+});
+</script>
 </body>
 </html>
