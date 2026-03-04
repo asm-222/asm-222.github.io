@@ -1,174 +1,218 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asmaa Yousif · Data Analyst</title>
-  
-  <!-- Font Awesome latest -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap">
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Asmaa Yousif Elmetwaly | Data Analyst</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Quick fix for potential image placeholders */
+			.image img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+			.spotlight .image {
+				border-radius: 100%;
+				overflow: hidden;
+			}
+			.features article .image {
+				border-radius: 5px 5px 0 0;
+				overflow: hidden;
+				height: 200px; /* Adjust as needed */
+			}
+			.features article .image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			/* Style for placeholder icons in skills */
+			.fa-gem, .fa-chart-bar, .fa-database, .fa-file-excel, .fa-chart-pie, .fa-code {
+				margin-right: 0.5rem;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
 
-  <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {
-      background: linear-gradient(135deg, #e0f0ff, #d0e4ff, #c0d9ff);
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height:1.5;
-      color:#1e2b3c;
-      min-height:100vh;
-      padding:2rem 1.5rem;
-    }
-    .wrapper {max-width:1280px; margin:auto;}
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-    /* Glass Card */
-    .glass-card {
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(14px) saturate(180%);
-      -webkit-backdrop-filter: blur(14px) saturate(180%);
-      border:1px solid rgba(255,255,255,0.4);
-      border-radius:2rem;
-      box-shadow:0 20px 40px -12px rgba(0,20,40,0.25);
-      padding:1.75rem;
-      transition:0.3s ease;
-    }
-    .glass-card:hover {transform: translateY(-5px) scale(1.03);}
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Asmaa Yousif</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
 
-    /* Profile */
-    .profile-grid {
-      display:flex; flex-wrap:wrap; gap:2rem; align-items:center; margin-bottom:2.5rem;
-    }
-    .profile-pic {width:150px;height:150px;border-radius:50%;object-fit:cover; background:#bdd3e8;}
-    .profile-info-col {flex:1;}
-    .name-title h1 {font-size:2.8rem;color:#0b1c2e;margin-bottom:0.25rem;}
-    .subhead {font-size:1.3rem;color:#1e3b5a;margin-bottom:0.75rem;display:flex;gap:0.5rem;align-items:center;}
-    .contact-bar {display:flex;flex-wrap:wrap;gap:1.75rem;margin-top:1rem;}
-    .contact-item {display:flex;align-items:center;gap:0.6rem;font-size:1rem;background:rgba(255,255,255,0.2);padding:0.3rem 1rem;border-radius:40px;border:1px solid rgba(255,255,255,0.25);backdrop-filter:blur(4px);}
-    .contact-item i {width:1.4rem;text-align:center;color:#1f4973;}
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="#projects">Projects</a></li>
+								<li><a href="#skills">Skills</a></li>
+								<li><a href="#footer">Contact</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
 
-    /* Summary */
-    .summary-card {margin-bottom:2.5rem;}
-    .summary-text {font-size:1.1rem;color:#11212e;max-width:85%;}
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-gem"></span></div>
+							<h2>Asmaa Yousif Elmetwaly</h2>
+							<p>Data Analyst | Excel · Power BI · SQL · Python</p>
+						</div>
+					</section>
 
-    /* Sections */
-    .section-header {display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;font-weight:450;font-size:1.8rem;color:#0b263b;}
-    .section-header i {font-size:2rem;color:#2a4b74;}
-    .cards-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.8rem;margin-bottom:2.5rem;}
+				<!-- Wrapper -->
+					<section id="wrapper">
 
-    .project-card {display:flex;flex-direction:column;transition:0.3s;}
-    .project-title {display:flex;align-items:center;gap:0.6rem;margin-bottom:0.8rem;font-size:1.4rem;font-weight:500;}
-    .project-title i {font-size:1.6rem;color:#1f4973;}
-    .project-desc {color:#1a2e43;margin-bottom:1.2rem;font-size:0.95rem;flex:1;}
-    .tech-tags {display:flex;flex-wrap:wrap;gap:0.5rem;margin:0.5rem 0 1rem;}
-    .tech-tag {background: rgba(40,70,110,0.15);border-radius:30px;padding:0.2rem 0.9rem;font-size:0.8rem;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(2px);}
-    .btn-link {display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;color:#0b2b48;font-weight:500;border-bottom:2px solid transparent;transition:0.2s;margin-top:0.4rem;}
-    .btn-link i {font-size:1rem;}
-    .btn-link:hover {border-bottom-color:#1f4973;}
+						<!-- One - About/Summary -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/pic01.jpg" alt="Profile" onerror="this.src='https://via.placeholder.com/400x400?text=Asmaa'" /></a>
+									<div class="content">
+										<h2 class="major">About Me</h2>
+										<p>Motivated and detail-oriented aspiring Data Analyst with hands-on experience in Excel, Power BI, SQL, and Python. Skilled in data cleaning, visualization, and extracting insights from datasets. Eager to apply analytical and problem-solving skills to support data-driven decision making.</p>
+									</div>
+								</div>
+							</section>
 
-    /* Skills */
-    .skills-grid {display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;}
-    .skill-chip {background: rgba(240,248,255,0.3);border-radius:40px;padding:0.5rem 1.2rem;font-size:1rem;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,255,255,0.3);}
-    .skill-chip i {color:#1e4b74;}
+						<!-- Two - Featured Projects -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/pic02.jpg" alt="Sales & Order Analysis" onerror="this.src='https://via.placeholder.com/400x400?text=Sales+Project'" /></a>
+									<div class="content">
+										<h2 class="major">Sales & Order Analysis</h2>
+										<p>End-to-end Excel project: Power Query cleaning, Power Pivot, DAX measures, and interactive dashboard with KPIs, trends & slicers.</p>
+										<a href="#" class="special">Repository →</a>
+									</div>
+								</div>
+							</section>
 
-    /* Languages */
-    .language-row {display:flex;gap:2.5rem;}
-    .lang-item {display:flex;align-items:center;gap:0.5rem;}
+						<!-- Three - Second Featured Project -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/pic03.jpg" alt="HR Analytics Dashboard" onerror="this.src='https://via.placeholder.com/400x400?text=HR+Dashboard'" /></a>
+									<div class="content">
+										<h2 class="major">HR Analytics Dashboard</h2>
+										<p>Interactive Power BI dashboard analyzing employee attrition, satisfaction, and recruitment funnel. Built with DAX and custom visuals.</p>
+										<a href="#" class="special">Placeholder →</a>
+									</div>
+								</div>
+							</section>
 
-    /* Fade-up animation */
-    .fade-up {opacity:0; transform:translateY(30px); transition: all 0.6s ease-out;}
-    .fade-up.active {opacity:1; transform:translateY(0);}
+						<!-- Four - Skills / More Projects -->
+							<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">Skills & Tools</h2>
+									<p>Core competencies and technologies I use to turn data into insights.</p>
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="Excel" onerror="this.src='https://via.placeholder.com/300x200?text=Microsoft+Excel'" /></a>
+											<h3 class="major">Excel</h3>
+											<p>Advanced Excel: Power Query, Power Pivot, DAX, complex formulas, and interactive dashboards.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="Power BI" onerror="this.src='https://via.placeholder.com/300x200?text=Power+BI'" /></a>
+											<h3 class="major">Power BI</h3>
+											<p>Data modeling, DAX, custom visuals, and building comprehensive business reports.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="SQL" onerror="this.src='https://via.placeholder.com/300x200?text=SQL'" /></a>
+											<h3 class="major">SQL</h3>
+											<p>Writing complex queries, joins, subqueries, and data manipulation for analysis.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="Python" onerror="this.src='https://via.placeholder.com/300x200?text=Python'" /></a>
+											<h3 class="major">Python</h3>
+											<p>Pandas, NumPy, Matplotlib for data cleaning, analysis, and visualization.</p>
+										</article>
+									</section>
+									<ul class="actions">
+										<li><a href="#" class="button">Browse All Projects</a></li>
+									</ul>
+								</div>
+							</section>
 
-    /* Responsive */
-    @media(max-width:768px){
-      .profile-grid{flex-direction:column;align-items:center;}
-      .skills-grid,.language-row{justify-content:center;}
-      .name-title h1{font-size:2.2rem;}
-    }
-  </style>
-</head>
-<body>
-<div class="wrapper">
+					</section>
 
-  <!-- Profile -->
-  <div class="profile-grid fade-up">
-    <div class="profile-pic-col">
-      <div class="profile-pic" role="img" aria-label="profile"></div>
-    </div>
-    <div class="profile-info-col glass-card">
-      <div class="name-title"><h1>Asmaa Yousif Elmetwaly</h1></div>
-      <div class="subhead"><i class="fas fa-chart-line"></i> Data Analyst</div>
-      <div class="contact-bar">
-        <span class="contact-item"><i class="fas fa-phone-alt"></i> 01113240041</span>
-        <span class="contact-item"><i class="fas fa-envelope"></i> asmaayousif671@gmail.com</span>
-        <span class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</span>
-      </div>
-    </div>
-  </div>
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Get in touch</h2>
+							<p>Interested in collaborating or have a data challenge? Feel free to reach out!</p>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Asmaa Yousif Elmetwaly<br />
+									Data Analyst<br />
+									Available for opportunities
+								</li>
+								<li class="icon solid fa-phone">(000) 000-0000</li>
+								<li class="icon solid fa-envelope"><a href="#">asmaa.yousif@example.com</a></li>
+								<li class="icon brands fa-twitter"><a href="#">twitter.com/asmaa_analyst</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/asmaa.data</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/asmaa.analytics</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Asmaa Yousif. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
 
-  <!-- Summary -->
-  <div class="glass-card summary-card fade-up">
-    <div style="display:flex; gap:1rem; align-items:flex-start;">
-      <i class="fas fa-bullseye" style="font-size:2rem;color:#1f4973;"></i>
-      <div class="summary-text">
-        Motivated and detail-oriented aspiring Data Analyst with hands-on experience in Excel, Power BI, SQL, and Python. Skilled in data cleaning, visualization, and extracting insights from datasets. Eager to apply analytical and problem-solving skills to support data-driven decision making.
-      </div>
-    </div>
-  </div>
+			</div>
 
-  <!-- Projects -->
-  <div class="section-header fade-up"><i class="fas fa-folder-open"></i> Featured Projects</div>
-  <div class="cards-grid fade-up">
-    <div class="glass-card project-card fade-up">
-      <div class="project-title"><i class="fas fa-table"></i> Sales & Order Analysis</div>
-      <img src="pic/Dash.gif" alt="Sales Dashboard GIF" style="width:100%; border-radius:15px; margin-bottom:0.8rem;">
-      <div class="project-desc">End-to-end Excel project: Power Query cleaning, Power Pivot, DAX measures, and interactive dashboard with KPIs, trends & slicers.</div>
-      <div class="tech-tags">
-        <span class="tech-tag">Excel</span>
-        <span class="tech-tag">Power Query</span>
-        <span class="tech-tag">Power Pivot</span>
-        <span class="tech-tag">DAX</span>
-      </div>
-      <a href="https://github.com/asm-222/Sales-Dashboards" class="btn-link" target="_blank"><i class="fab fa-github"></i> Repository →</a>
-    </div>
-
-    <div class="glass-card project-card fade-up">
-      <div class="project-title"><i class="fas fa-users"></i> HR Analytics Dashboard</div>
-      <div class="project-desc">Interactive Power BI dashboard analyzing employee attrition, satisfaction, and recruitment funnel. Built with DAX and custom visuals.</div>
-      <div class="tech-tags">
-        <span class="tech-tag">Power BI</span>
-        <span class="tech-tag">DAX</span>
-        <span class="tech-tag">SQL</span>
-      </div>
-      <a href="#" class="btn-link"><i class="fab fa-github"></i> Placeholder →</a>
-    </div>
-  </div>
-
-  <!-- Skills -->
-  <div class="glass-card fade-up">
-    <div style="display:flex; gap:0.6rem; align-items:center; margin-bottom:1rem;"><i class="fas fa-code"></i><span style="font-size:1.5rem; font-weight:450;">Skills</span></div>
-    <div class="skills-grid">
-      <span class="skill-chip"><i class="fas fa-file-excel"></i> Excel</span>
-      <span class="skill-chip"><i class="fas fa-database"></i> SQL</span>
-      <span class="skill-chip"><i class="fas fa-chart-pie"></i> Power BI</span>
-      <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
-    </div>
-  </div>
-
-</div>
-
-<!-- Fade-up JS -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('active');
-      }
-    });
-  }, {threshold: 0.1});
-  elements.forEach(el => observer.observe(el));
-});
-</script>
-</body>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				// Small tweak to handle potential missing images by replacing with placeholder service
+				document.addEventListener('DOMContentLoaded', function() {
+					var images = document.querySelectorAll('img');
+					images.forEach(function(img) {
+						img.onerror = function() {
+							this.onerror = null;
+							// Provide a simple colored placeholder with alt text as label
+							var alt = this.alt || 'Placeholder';
+							var bgColor = '2e3141';
+							var textColor = 'ffffff';
+							this.src = 'https://via.placeholder.com/400x300/' + bgColor + '/' + textColor + '?text=' + encodeURIComponent(alt);
+						};
+					});
+				});
+			</script>
+	</body>
 </html>
