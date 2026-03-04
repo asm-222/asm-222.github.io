@@ -22,29 +22,30 @@
             background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
             color: white;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         /* Glow Effects */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #38bdf855, transparent 70%);
-            top: -150px;
-            left: -150px;
-            z-index: -1;
-        }
-
+        body::before,
         body::after {
             content: "";
             position: fixed;
             width: 500px;
             height: 500px;
+            z-index: -1;
+            filter: blur(100px);
+        }
+
+        body::before {
+            background: radial-gradient(circle, #38bdf855, transparent 70%);
+            top: -150px;
+            left: -150px;
+        }
+
+        body::after {
             background: radial-gradient(circle, #06b6d455, transparent 70%);
             bottom: -150px;
             right: -150px;
-            z-index: -1;
         }
 
         /* Navbar */
@@ -81,19 +82,10 @@
             padding: 120px 10%;
             text-align: center;
             min-height: 100vh;
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         h2 {
@@ -103,27 +95,16 @@
             text-shadow: 0 0 15px #38bdf8aa;
         }
 
-        /* Hero */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
+        /* Profile Image */
         .profile-circle {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 3px solid #38bdf8;
+            border: 4px solid #38bdf8;
             box-shadow: 0 0 25px #38bdf8aa;
             margin-bottom: 25px;
             overflow: hidden;
             background: #1e293b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
         }
 
         .profile-circle img {
@@ -136,14 +117,16 @@
             font-size: 52px;
             font-weight: 700;
             text-shadow: 0 0 20px #38bdf8;
+            margin-bottom: 10px;
         }
 
         .title {
             font-size: 22px;
             color: #94e2ff;
-            margin: 15px 0 35px;
+            margin-bottom: 35px;
         }
 
+        /* Buttons */
         .buttons {
             display: flex;
             gap: 20px;
@@ -179,16 +162,6 @@
         .btn-outline:hover {
             background: #38bdf8;
             color: #0f172a;
-            box-shadow: 0 0 30px #38bdf8;
-        }
-
-        /* About */
-        .about p {
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.8;
-            font-size: 18px;
-            color: #e2e8f0;
         }
 
         /* Projects */
@@ -197,27 +170,15 @@
             padding: 25px;
             border-radius: 20px;
             max-width: 600px;
-            margin: 30px auto;
             backdrop-filter: blur(12px);
-            box-shadow: 0 0 25px #38bdf855;
+            border: 1px solid rgba(56, 189, 248, 0.3);
             transition: 0.4s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 40px #38bdf8;
         }
 
         .project-card img {
             width: 100%;
             border-radius: 15px;
             margin-bottom: 15px;
-        }
-
-        .project-card a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
         }
 
         /* Skills */
@@ -231,41 +192,18 @@
         .skill {
             padding: 10px 20px;
             border-radius: 20px;
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.8);
             border: 1px solid #38bdf8;
-            box-shadow: 0 0 15px #38bdf855;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        /* Contact */
-        .contact h2 {
-            font-size: 42px;
-            text-shadow: 0 0 25px #38bdf8;
-        }
-
-        .contact a {
-            color: #38bdf8;
-            text-decoration: none;
-            display: block;
-            margin: 15px 0;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-
-        .contact a i {
-            margin-right: 8px;
-        }
-
-        .contact a:hover {
-            text-shadow: 0 0 15px #38bdf8;
-        }
-
         footer {
+            padding: 40px;
             text-align: center;
-            padding: 20px;
             color: #94a3b8;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -280,87 +218,77 @@
         <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
     </nav>
 
-    <section class="hero" id="home">
+    <section id="home">
         <div class="profile-circle">
-            <img src="C:\Users\win 10\Desktop\project/replace.jpg" alt="Asmaa Yousif">
-
+            <img src="replace.jpg" alt="Asmaa Yousif">
         </div>
 
         <div class="name">Asmaa Yousif</div>
         <div class="title">Data Analyst | Turning Raw Data into Clear Insights</div>
 
         <div class="buttons">
-            <a href="#projects" class="btn btn-primary">
-                <i class="fa-solid fa-briefcase"></i> View My Work
-            </a>
-            <a href="#contact" class="btn btn-outline">
-                <i class="fa-solid fa-paper-plane"></i> Contact Me
-            </a>
+            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-briefcase"></i> View Work</a>
+            <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <section id="about">
         <h2>About Me</h2>
-        <p>
+        <p style="max-width: 800px; line-height: 1.8; font-size: 18px; color: #e2e8f0;">
             Motivated and detail-oriented aspiring Data Analyst with hands-on experience in Excel, Power BI, SQL, and
-            Python. Skilled in data cleaning, visualization, and extracting meaningful insights from databases. Eager to
-            apply analytical and problem-solving skills to support data-driven decision-making in a professional
-            environment.
+            Python. Skilled in data cleaning, visualization, and extracting insights to support data-driven
+            decision-making.
         </p>
     </section>
 
-    <section class="projects" id="projects">
+    <section id="projects">
         <h2>Projects</h2>
-
         <div class="project-card">
-            <img src="https://raw.githubusercontent.com/asm-222/Sales-Dashboards/main/pic/Dashboard1.PNG"
-                alt="Sales & Order Analysis">
-            <h3><i class="fa-solid fa-chart-column"></i> Sales & Order Analysis</h3>
-            <p>Interactive dashboard analyzing sales performance, customer behavior, and order trends.</p>
-            <a href="https://github.com/asm-222/Sales-Dashboards" target="_blank">
-                <i class="fa-brands fa-github"></i> View Project on GitHub
+            <img src="https://raw.githubusercontent.com/asm-222/Sales-Dashboards/main/pic/Dashboard1.PNG" alt="Project">
+            <h3>Sales & Order Analysis</h3>
+            <p style="margin: 10px 0;">Interactive dashboard analyzing sales performance and customer behavior.</p>
+            <a href="https://github.com/asm-222/Sales-Dashboards" target="_blank"
+                style="color: #38bdf8; text-decoration: none; font-weight: bold;">
+                <i class="fa-brands fa-github"></i> View on GitHub
             </a>
         </div>
-
     </section>
 
-    <section class="skills" id="skills">
-        <h2>Skills</h2>
-
+    <section id="skills">
+        <h2>Technical Skills</h2>
         <div class="skills-list">
             <div class="skill"><i class="fa-solid fa-file-excel"></i> Excel</div>
             <div class="skill"><i class="fa-solid fa-chart-pie"></i> Power BI</div>
             <div class="skill"><i class="fa-brands fa-python"></i> Python</div>
-            <div class="skill"><i class="fa-solid fa-chart-area"></i> Tableau</div>
             <div class="skill"><i class="fa-solid fa-database"></i> SQL</div>
-            <div class="skill"><i class="fa-solid fa-file-word"></i> Microsoft Office</div>
         </div>
-
-        <br><br>
-
-        <h2>Languages</h2>
-        <div class="skills-list">
-            <div class="skill"><i class="fa-solid fa-language"></i> English: Good</div>
-            <div class="skill"><i class="fa-solid fa-language"></i> Arabic: Excellent</div>
-        </div>
-
+        <section id="languages" style="min-height: auto; padding: 60px 10%;">
+            <h2>Languages</h2>
+            <div class="skills-list">
+                <div class="skill">
+                    <i class="fa-solid fa-language"></i>
+                    <span><strong>Arabic:</strong> Native</span>
+                </div>
+                <div class="skill">
+                    <i class="fa-solid fa-globe"></i>
+                    <span><strong>English:</strong> Good</span>
+                </div>
+            </div>
+        </section>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
 
-        <a href="mailto:asmaayousif671@gmail.com">
-            <i class="fa-solid fa-envelope"></i> asmaayousif671@gmail.com
-        </a>
-
-        <a href="https://github.com/asm-222" target="_blank">
-            <i class="fa-brands fa-github"></i> GitHub Profile
-        </a>
-
-        <a href="https://www.linkedin.com/in/asmaa-yousif-09812a3a1/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
-        </a>
-
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <a href="mailto:asmaayousif671@gmail.com" style="color: #38bdf8; text-decoration: none; font-size: 20px;">
+                <i class="fa-solid fa-envelope"></i> asmaayousif671@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/asmaa-yousif-09812a3a1/" target="_blank"
+                style="color: #38bdf8; text-decoration: none; font-size: 20px;">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+            </a>
+        </div>
     </section>
 
     <footer>
